@@ -1,0 +1,16 @@
+services:
+  gerrit:
+    image: gerritcodereview/gerrit:3.12.3-ubuntu24
+    container_name: gerrit
+    restart: unless-stopped
+
+    environment:
+      # External URL to use in the browser:
+      CANONICAL_WEB_URL: "http://localhost:8080"
+
+    ports:
+      - "8080:8080"     # Change if on a machine also running Jenkins
+      - "29418:29418"   # SSH for git
+
+    volumes:
+      - ./gerrit:/var/gerrit:Z
