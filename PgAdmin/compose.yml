@@ -1,0 +1,12 @@
+services:
+  pgadmin4:
+    image: elestio/pgadmin:${SOFTWARE_VERSION_TAG}
+    restart: always
+    environment:
+    PGADMIN_DEFAULT_EMAIL: "admin@admin.local"
+    PGADMIN_DEFAULT_PASSWORD: "penguin"
+    PGADMIN_LISTEN_PORT: 5050
+    ports:
+      - 5050:5050
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json
