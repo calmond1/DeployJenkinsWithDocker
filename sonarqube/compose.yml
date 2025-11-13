@@ -21,7 +21,6 @@ services:
       - sonarqube
     ports:
       - "9000:9000"
-      - "9001:9001"
 
 networks:
   sonarqube:
